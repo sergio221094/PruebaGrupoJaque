@@ -20,6 +20,10 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
+                <prop key="home.htm">homeController</prop>
+                <prop key="homeAdmin.htm">homeAdminController</prop>
+                <prop key="homeUser.htm">homeUserController</prop>
+                <prop key="addUser.htm">addUserController</prop>
             </props>
         </property>
     </bean>
@@ -29,9 +33,12 @@
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
 
-    <!--
-    The index controller.
-    -->
+    
+    <!--Controladores-->
+    <bean name="addUserController" class="com.GrupoJaque.Controllers.AddUserController"/>
+    <bean name="homeUserController" class="com.GrupoJaque.Controllers.HomeUserController"/>
+    <bean name="homeAdminController" class="com.GrupoJaque.Controllers.HomeAdminController"/>
+    <bean name="homeController" class="com.GrupoJaque.Controllers.HomeController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
