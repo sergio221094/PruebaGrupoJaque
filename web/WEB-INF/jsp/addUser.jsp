@@ -48,6 +48,7 @@
                             <hr />
                             <input type="submit" value="Enviar" class="btn btn-danger" />
                         </form:form>
+                            
                 </div>
             </div>
         </div>
