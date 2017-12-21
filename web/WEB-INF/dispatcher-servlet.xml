@@ -25,6 +25,8 @@
                 <prop key="homeUser.htm">homeUserController</prop>
                 <prop key="addUser.htm">addUserController</prop>
                 <prop key="user.htm">userController</prop>
+                <prop key="adminTodos.htm">adminTodosController</prop>
+                <prop key="admin.htm">adminController</prop>
             </props>
         </property>
     </bean>
@@ -36,6 +38,8 @@
 
     
     <!--Controladores-->
+    <bean name="adminController" class="com.GrupoJaque.Controllers.AdminController"/>
+    <bean name="adminTodosController" class="com.GrupoJaque.Controllers.AdminTodosController"/>
     <bean name="userController" class="com.GrupoJaque.Controllers.UserController"/>
     <bean name="addUserController" class="com.GrupoJaque.Controllers.AddUserController"/>
     <bean name="homeUserController" class="com.GrupoJaque.Controllers.HomeUserController"/>

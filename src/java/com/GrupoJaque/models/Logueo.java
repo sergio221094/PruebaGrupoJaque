@@ -24,8 +24,7 @@ public class Logueo {
         url="jdbc:mysql://localhost/practicagrupojaque";
         uss="root";
         contra="";
-        
-    }
+        }
     
     
       public int logear(String us, String ps){

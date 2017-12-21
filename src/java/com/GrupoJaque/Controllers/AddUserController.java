@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("addUser.htm")
+
 public class AddUserController {
 
     UsuariosValidaciones usuariosValidaciones;
