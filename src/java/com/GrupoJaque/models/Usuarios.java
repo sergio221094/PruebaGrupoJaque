@@ -12,12 +12,12 @@ package com.GrupoJaque.models;
 public class Usuarios {
     
     private int id_usuario;
-    private String username,nombre,correo,pass,telefono,arma,equipo,meza,cuarto;
+    private String username,nombre,correo,pass,telefono,arma,equipo,meza,cuarto,tipodecuenta;
 
     public Usuarios() {
     }
 
-    public Usuarios(String username, String nombre, String correo, String pass, String telefono, String arma, String equipo, String meza, String cuarto) {
+    public Usuarios(String username, String nombre, String correo, String pass, String telefono, String arma, String equipo, String meza, String cuarto, String tipodecuenta) {
         this.username = username;
         this.nombre = nombre;
         this.correo = correo;
@@ -27,9 +27,10 @@ public class Usuarios {
         this.equipo = equipo;
         this.meza = meza;
         this.cuarto = cuarto;
+        this.tipodecuenta = tipodecuenta;
     }
 
-    public Usuarios(int id_usuario, String username, String nombre, String correo, String pass, String telefono, String arma, String equipo, String meza, String cuarto) {
+    public Usuarios(int id_usuario, String username, String nombre, String correo, String pass, String telefono, String arma, String equipo, String meza, String cuarto, String tipodecuenta) {
         this.id_usuario = id_usuario;
         this.username = username;
         this.nombre = nombre;
@@ -40,13 +41,7 @@ public class Usuarios {
         this.equipo = equipo;
         this.meza = meza;
         this.cuarto = cuarto;
-    }
-
-    public Usuarios(String arma, String equipo, String meza, String cuarto) {
-        this.arma = arma;
-        this.equipo = equipo;
-        this.meza = meza;
-        this.cuarto = cuarto;
+        this.tipodecuenta = tipodecuenta;
     }
 
     public int getId_usuario() {
@@ -128,11 +123,15 @@ public class Usuarios {
     public void setCuarto(String cuarto) {
         this.cuarto = cuarto;
     }
-    
-    
-    
+
+    public String getTipodecuenta() {
+        return tipodecuenta;
+    }
+
+    public void setTipodecuenta(String tipodecuenta) {
+        this.tipodecuenta = tipodecuenta;
+    }
 
 
-  
     
 }

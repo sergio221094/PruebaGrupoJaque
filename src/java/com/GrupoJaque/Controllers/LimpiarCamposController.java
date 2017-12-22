@@ -1,34 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.GrupoJaque.Controllers;
 
 import com.GrupoJaque.models.Conectar;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-public class DeleteController {
+public class LimpiarCamposController {
     
     private JdbcTemplate jdbcTemplate;
-    public DeleteController()
+    public LimpiarCamposController()
     {
         Conectar con=new Conectar();
         this.jdbcTemplate=new JdbcTemplate(con.conectar() );
     }
     
-    @RequestMapping("delete.htm")
-    public ModelAndView home(HttpServletRequest request) 
+    @RequestMapping("limpiarCampos.htm")
+
+    public ModelAndView limpiarCampos(HttpServletRequest request) 
     {
+
+        
         int id=Integer.parseInt(request.getParameter("id_usuario"));
-        this.jdbcTemplate.update(
-                 "delete from usuario "
-                + "where "
-                + "id_usuario=? ",
+        this.jdbcTemplate.update("update usuario set username=?, nombre=?, correo=?, pass=?, telefono=?, arma=NULL, equipo=NULL, meza=NULL, cuarto=NULL, tipodecuenta=1 where id_usuario=? ",
         id);
-        return new ModelAndView("redirect:/admin.htm");
+        return new ModelAndView("redirect:/home.htm");
     }    
 }

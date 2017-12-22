@@ -1,0 +1,9 @@
+body {
+background-image: url("imagenes/fondo.jpg");
+}
+img.imgPlay{
+    width: 600px; height: 338px;
+    display:block;margin:0 auto 0 auto;
+     border-bottom: 1px solid #999999; 
+   border-right: 1px solid #999999;
+}

@@ -7,10 +7,13 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"   %>
 <%@taglib  prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page import="com.GrupoJaque.models.coneDB"%>
+<a href="../../../../../../../C:/Users/sergi/AppData/Local/Temp/Jugadores.url"></a>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="<c:url value="/resources/style.css" />" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Usuario</title>
@@ -21,20 +24,21 @@
     <body>
         <ol class="breadcrumb">
         <li><a href="<c:url value="/home.htm" />">Inicio</a></li>
-        <li><a href="<c:url value="/homeUser.htm" />">Login usuarios</a></li>
-        <li class="active">index</li>
+        <li class="active">User</li>
         </ol>
+         <div class="modal-content">
+              <div class="panel-body">
                 <div class="col-sm-6 col-md-4 col-md-offset-4">
                     <%  HttpSession sesion = request.getSession();
                     String username;
-                    if (sesion.getAttribute("user")!=null) {
+                    String tipodecuenta;
+                    if (sesion.getAttribute("user")!=null && session.getAttribute("tipodecuenta").toString()=="1") {
                     username=sesion.getAttribute("user").toString();
-                    out.print("<a class='btn btn-sm btn-success' href='homeUser.htm?cerrar=true'>Cerrar sesión</a>");
+                    out.print("<a ><a class='btn btn-sm btn-success' href='home.htm?cerrar=true'>Cerrar sesión</a></a>");
                     }else{
-                    out.print("<script>location.replace('home.htm');</script>");
+                           
+                            out.print("<script>location.replace('home.htm');</script>");
                     }%>           
-                    
-
                     
                     <form:form method="post" commandName="usuario">
 
@@ -106,7 +110,7 @@
                             coneDB cn4=new coneDB();
                             try {
                             cn4.Conectar();
-                            String sql="select nombremeza from meza;";
+                            String sql="select nombremeza from meza ;";
                             cn4.st=cn4.conec.createStatement();
                             cn4.rt=cn4.st.executeQuery(sql);
                             while(cn4.rt.next()){
@@ -120,7 +124,9 @@
                          </p>
                          <hr />
                          <input type="submit" value="Jugar" class="btn btn-danger" />
+                           </div></div></div> 
                                                  <div style="visibility:hidden">    
+                                                     
                         <p>
                                 <form:label path="username">Nombre de usuario:</form:label>
                                 <form:input path="username" cssClass="form-control" />
@@ -146,10 +152,13 @@
                             </p>
                         </div>
                     </form:form> 
-                       
-            </div>
-            </div>
-        </div>
+                      
+            </div>    
+         </div>
+                    
+      
+           
+        
 
     </body>
 </html>

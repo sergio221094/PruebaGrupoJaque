@@ -8,7 +8,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+   
 
+    
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
     <!--
@@ -21,8 +23,6 @@
             <props>
                 <prop key="index.htm">indexController</prop>
                 <prop key="home.htm">homeController</prop>
-                <prop key="homeAdmin.htm">homeAdminController</prop>
-                <prop key="homeUser.htm">homeUserController</prop>
                 <prop key="addUser.htm">addUserController</prop>
                 <prop key="user.htm">userController</prop>
                 <prop key="adminTodos.htm">adminTodosController</prop>
@@ -30,6 +30,8 @@
                 <prop key="admin.htm">adminController</prop>
                 <prop key="delete.htm">deleteController</prop>
                 <prop key="edit.htm">editController</prop>
+                <prop key="play.htm">playController</prop>
+                <prop key="limpiarCampos.htm">limpiarCamposController</prop>
             </props>
         </property>
     </bean>
@@ -39,17 +41,18 @@
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
 
-    
+
     <!--Controladores-->
+   
+    <bean name="limpiarCamposController" class="com.GrupoJaque.Controllers.LimpiarCamposController"/>
     <bean name="editController" class="com.GrupoJaque.Controllers.EditController"/>
+    <bean name="playController" class="com.GrupoJaque.Controllers.PlayController"/>
     <bean name="deleteController" class="com.GrupoJaque.Controllers.DeleteController"/>
     <bean name="adminController" class="com.GrupoJaque.Controllers.AdminController"/>
     <bean name="adminTodosController" class="com.GrupoJaque.Controllers.AdminTodosController"/>
     <bean name="adminActivosController" class="com.GrupoJaque.Controllers.AdminActivosController"/>
     <bean name="userController" class="com.GrupoJaque.Controllers.UserController"/>
     <bean name="addUserController" class="com.GrupoJaque.Controllers.AddUserController"/>
-    <bean name="homeUserController" class="com.GrupoJaque.Controllers.HomeUserController"/>
-    <bean name="homeAdminController" class="com.GrupoJaque.Controllers.HomeAdminController"/>
     <bean name="homeController" class="com.GrupoJaque.Controllers.HomeController"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"

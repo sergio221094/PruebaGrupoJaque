@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/web/WEB-INF/jsp/play.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/web/WEB-INF/jsp/home.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/web/WEB-INF/jsp/admin.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/src/java/com/GrupoJaque/Controllers/PlayController.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/web/WEB-INF/jsp/adminTodos.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/src/java/com/GrupoJaque/Controllers/AdminTodosController.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/web/WEB-INF/jsp/addUser.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/src/java/com/GrupoJaque/Controllers/LimpiarCamposController.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/web/WEB-INF/jsp/user.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/web/resources/style.css</file>
+            <file>file:/E:/Documentos/NetBeansProjects/PruebaGrupoJaque/web/WEB-INF/jsp/edit.jsp</file>
+        </group>
     </open-files>
 </project-private>

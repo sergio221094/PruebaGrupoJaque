@@ -55,7 +55,7 @@ public class AddUserController {
         {
         this.jdbcTemplate.update
         (
-        "insert into usuario (username,nombre,correo,pass,telefono ) values (?,?,?,?,?)",
+        "insert into usuario (username,nombre,correo,pass,telefono,arma,equipo,meza,cuarto,tipodecuenta ) values (?,?,?,?,?,NULL,NULL,NULL,NULL,1)",
          u.getUsername(),u.getNombre(),u.getCorreo(),u.getPass(),u.getTelefono()
         );
          return new ModelAndView("redirect:/home.htm");

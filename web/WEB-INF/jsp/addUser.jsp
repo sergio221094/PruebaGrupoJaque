@@ -5,16 +5,16 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Hola desde Spring Web MVC</title>
+        <title>Agregar usuario</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     </head>
     <body>
         <div class="container">
             
-         <ol class="breadcrumb">
+        <ol class="breadcrumb">
         <li><a href="<c:url value="/home.htm" />">Inicio</a></li>
-        <li><a href="<c:url value="/homeUser.htm" />">Login usuarios</a></li>
-        <li class="active">Formulario de registro</li>
+        <li class="active">Agregar</li>
         </ol>
             <div class="panel panel-primary">
                 <div class="panel-heading">Formulario</div>
@@ -48,7 +48,7 @@
                                 <form:input path="telefono" cssClass="form-control" />
                             </p>
                             <hr />
-                            <input type="submit" value="Enviar" class="btn btn-danger" />
+                            <input type="submit" onclick="alert('¡Se agrego el nuevo usuario con exito!')"  value="Enviar" class="btn btn-danger" />
                         </form:form>
                             
                 </div>

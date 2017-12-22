@@ -31,8 +31,8 @@ public class Logueo {
        Connection conn;
        PreparedStatement pst;
        ResultSet rs;
-       int consulta=0;
-       String sql="SELECT count(*) FROM `usuario` WHERE username = '"+us+"' and pass = '"+ps+"'";
+       int tipodecuenta=0;
+       String sql="SELECT tipodecuenta FROM `usuario` WHERE username = '"+us+"' and pass = '"+ps+"'";
   
        try {
            Class.forName(this.driver);
@@ -46,39 +46,14 @@ public class Logueo {
            rs=pst.executeQuery();
            
            while(rs.next()){
-               consulta=rs.getInt(1);
+               tipodecuenta=rs.getInt(1);
            }
            conn.close();
        } catch (ClassNotFoundException | SQLException e) {
        }
        
-       return consulta;
+       return tipodecuenta;
    }
-         public int logearAdmin(String us, String ps){
-       Connection conn;
-       PreparedStatement pst;
-       ResultSet rs;
-       int consulta=0;
-       String sql="SELECT count(*) FROM `admin` WHERE admin_username = '"+us+"' and admin_pass = '"+ps+"'";
+      
   
-       try {
-           Class.forName(this.driver);
-           conn = (Connection) DriverManager.getConnection(           
-           this.url,
-           this.uss,
-           this.contra);
-
-           
-           pst=(PreparedStatement) conn.prepareStatement(sql);
-           rs=pst.executeQuery();
-           
-           while(rs.next()){
-               consulta=rs.getInt(1);
-           }
-           conn.close();
-       } catch (ClassNotFoundException | SQLException e) {
-       }
-       
-       return consulta;
-   }
 }

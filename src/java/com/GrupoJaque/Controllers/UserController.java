@@ -31,52 +31,7 @@ public class UserController
     UsuariosValidaciones usuariosValidar;
     private JdbcTemplate jdbcTemplate;
      
-    
-    public UserController() 
-    {
-        this.usuariosValidar=new UsuariosValidaciones();
-        Conectar con=new Conectar();
-        this.jdbcTemplate=new JdbcTemplate(con.conectar() );
-    }
-    @RequestMapping(method=RequestMethod.GET) 
-    public ModelAndView form(HttpServletRequest request)
-    {
-        ModelAndView mav=new ModelAndView();
-        int id=Integer.parseInt(request.getParameter("id_usuario"));
-        Usuarios datos=this.selectUsuario(id);
-        mav.setViewName("user");
-        mav.addObject("usuario",new Usuarios(id,datos.getUsername(),datos.getNombre(),datos.getCorreo(),datos.getPass(),datos.getTelefono(),datos.getArma(),datos.getEquipo(),datos.getMeza(),datos.getCuarto()));
-        return mav;
-    }
-    @RequestMapping(method=RequestMethod.POST)
-    public ModelAndView form
-        (
-                @ModelAttribute("usuario") Usuarios u,
-                BindingResult result,
-                SessionStatus status,
-                HttpServletRequest request
-        )
-    {
-        this.usuariosValidar.validate(u, result);
-        if(result.hasErrors())
-        {
-             ModelAndView mav=new ModelAndView();
-            int id=Integer.parseInt(request.getParameter("id_usuario"));
-            Usuarios datos=this.selectUsuario(id);
-            mav.setViewName("user");
-            mav.addObject("usuario",new Usuarios(id,datos.getUsername(),datos.getNombre(),datos.getCorreo(),datos.getPass(),datos.getTelefono(),datos.getArma(),datos.getEquipo(),datos.getMeza(),datos.getCuarto()));
-            return mav;
-        }else
-        {
-            int id=Integer.parseInt(request.getParameter("id_usuario"));
-        this.jdbcTemplate.update(
-                "update usuario set username=?, nombre=?, correo=?, pass=?, telefono=?, arma=?, equipo=?, meza=?, cuarto=? where id_usuario=? ",
-         u.getUsername(),u.getNombre(),u.getCorreo(),u.getPass(),u.getTelefono(),u.getArma(),u.getEquipo(),u.getMeza(),u.getCuarto(),id);
-         return new ModelAndView("redirect:/adminTodos.htm");
-        }
-       
-    }
-    public Usuarios selectUsuario(int id) 
+        public Usuarios selectUsuario(int id) 
     {
         final Usuarios user = new Usuarios();
         String quer = "SELECT * FROM usuario WHERE id_usuario='" +id+"'";
@@ -103,4 +58,49 @@ public class UserController
             }
         );
     }
+    public UserController() 
+    {
+        this.usuariosValidar=new UsuariosValidaciones();
+        Conectar con=new Conectar();
+        this.jdbcTemplate=new JdbcTemplate(con.conectar() );
+    }
+    @RequestMapping(method=RequestMethod.GET) 
+    public ModelAndView form(HttpServletRequest request)
+    {
+        ModelAndView mav=new ModelAndView();
+        int id=Integer.parseInt(request.getParameter("id_usuario"));
+        Usuarios datos=this.selectUsuario(id);
+        mav.setViewName("user");
+        mav.addObject("usuario",new Usuarios(id,datos.getUsername(),datos.getNombre(),datos.getCorreo(),datos.getPass(),datos.getTelefono(),datos.getArma(),datos.getEquipo(),datos.getMeza(),datos.getCuarto(),datos.getTipodecuenta()));
+        return mav;
+    }
+    @RequestMapping(method=RequestMethod.POST)
+    public ModelAndView form
+        (
+                @ModelAttribute("usuario") Usuarios u,
+                BindingResult result,
+                SessionStatus status,
+                HttpServletRequest request
+        )
+    {
+        this.usuariosValidar.validate(u, result);
+        if(result.hasErrors())
+        {
+             ModelAndView mav=new ModelAndView();
+            int id=Integer.parseInt(request.getParameter("id_usuario"));
+            Usuarios datos=this.selectUsuario(id);
+            mav.setViewName("user");
+            mav.addObject("usuario",new Usuarios(id,datos.getUsername(),datos.getNombre(),datos.getCorreo(),datos.getPass(),datos.getTelefono(),datos.getArma(),datos.getEquipo(),datos.getMeza(),datos.getCuarto(),datos.getTipodecuenta()));
+            return mav;
+        }else
+        {
+            int id=Integer.parseInt(request.getParameter("id_usuario"));
+        this.jdbcTemplate.update(
+                "update usuario set username=?, nombre=?, correo=?, pass=?, telefono=?, arma=?, equipo=?, meza=?, cuarto=?, tipodecuenta=1 where id_usuario=? ",
+         u.getUsername(),u.getNombre(),u.getCorreo(),u.getPass(),u.getTelefono(),u.getArma(),u.getEquipo(),u.getMeza(),u.getCuarto(),id);
+         return new ModelAndView("redirect:/play.htm");
+        }
+       
+    }
+
 }

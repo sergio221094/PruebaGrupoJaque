@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset=UTF-8"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <title>Ejemplo de JdbcTemplate</title>
+        <link href="<c:url value="/resources/style.css" />" rel="stylesheet" type="text/css"/>
+        <meta charset="utf-8" />
+        <title>Todos los usuarios</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     </head>
     <body>
 
@@ -13,10 +14,11 @@
         <div class="container">
         <ol class="breadcrumb">
         <li><a href="<c:url value="/home.htm" />">Inicio</a></li>
-        <li><a href="<c:url value="/homeAdmin.htm" />">Login administrador</a></li>
-        <li><a href="<c:url value="/admin.htm" />">index</a></li>
+        <li><a href="<c:url value="/admin.htm" />">admin</a></li>
         <li class="active">Usuarios Registrados</li>
         </ol>
+                    <div class="modal-content">
+            <div class="panel-body">
             <div class="row">
                 <h1>Usuarios Registrados</h1>
              
@@ -50,6 +52,6 @@
             </table>
             </div>
 
-        </div>
+        </div></div></div>
     </body>
 </html>

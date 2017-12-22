@@ -25,7 +25,7 @@ public class AdminTodosController {
     @RequestMapping("adminTodos.htm")
     public ModelAndView adminTodos(){
         ModelAndView mav=new ModelAndView();
-        String sql="select * from usuario";
+        String sql="select * from usuario where tipodecuenta=1";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);
         mav.setViewName("adminTodos");

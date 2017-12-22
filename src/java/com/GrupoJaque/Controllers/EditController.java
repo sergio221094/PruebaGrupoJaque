@@ -45,7 +45,7 @@ public class EditController
         int id=Integer.parseInt(request.getParameter("id_usuario"));
         Usuarios datos=this.selectUsuario(id);
         mav.setViewName("edit");
-        mav.addObject("usuario",new Usuarios(id,datos.getUsername(),datos.getNombre(),datos.getCorreo(),datos.getPass(),datos.getTelefono(),datos.getArma(),datos.getEquipo(),datos.getMeza(),datos.getCuarto()));
+        mav.addObject("usuario",new Usuarios(id,datos.getUsername(),datos.getNombre(),datos.getCorreo(),datos.getPass(),datos.getTelefono(),datos.getArma(),datos.getEquipo(),datos.getMeza(),datos.getCuarto(),datos.getTipodecuenta()));
         return mav;
     }
     @RequestMapping(method=RequestMethod.POST)
@@ -64,13 +64,13 @@ public class EditController
             int id=Integer.parseInt(request.getParameter("id_usuario"));
             Usuarios datos=this.selectUsuario(id);
             mav.setViewName("edit");
-            mav.addObject("usuario",new Usuarios(id,datos.getUsername(),datos.getNombre(),datos.getCorreo(),datos.getPass(),datos.getTelefono(),datos.getArma(),datos.getEquipo(),datos.getMeza(),datos.getCuarto()));
+            mav.addObject("usuario",new Usuarios(id,datos.getUsername(),datos.getNombre(),datos.getCorreo(),datos.getPass(),datos.getTelefono(),datos.getArma(),datos.getEquipo(),datos.getMeza(),datos.getCuarto(),datos.getTipodecuenta()));
             return mav;
         }else
         {
             int id=Integer.parseInt(request.getParameter("id_usuario"));
         this.jdbcTemplate.update(
-                "update usuario set username=?, nombre=?, correo=?, pass=?, telefono=?, arma=?, equipo=?, meza=?, cuarto=? where id_usuario=? ",
+                "update usuario set username=?, nombre=?, correo=?, pass=?, telefono=?, arma=?, equipo=?, meza=?, cuarto=?, tipodecuenta=1 where id_usuario=? ",
          u.getUsername(),u.getNombre(),u.getCorreo(),u.getPass(),u.getTelefono(),u.getArma(),u.getEquipo(),u.getMeza(),u.getCuarto(),id);
          return new ModelAndView("redirect:/adminTodos.htm");
         }

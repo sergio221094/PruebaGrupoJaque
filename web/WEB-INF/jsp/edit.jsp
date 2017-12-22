@@ -11,18 +11,18 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <link href="<c:url value="/resources/style.css" />" rel="stylesheet" type="text/css"/>
         <title>Hola desde Spring Web MVC</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     </head>
     <body>
         <div class="container">
-                <ol class="breadcrumb">
-                <li><a href="<c:url value="/home.htm" />">Inicio</a></li>
-                <li><a href="<c:url value="/homeAdmin.htm" />">Login administrador</a></li>
-                <li><a href="<c:url value="/admin.htm" />">index</a></li>
-                <li><a href="<c:url value="/adminTodos.htm" />">Usuarios Registrados</a></li>
-                <li class="active">Editar registro</li>
-                </ol>
+        <ol class="breadcrumb">
+        <li><a href="<c:url value="/home.htm" />">Inicio</a></li>
+        <li><a href="<c:url value="/admin.htm" />">admin</a></li>
+        <li><a href="<c:url value="/adminTodos.htm" />">Todos los usuarios</a></li>
+        <li class="active">Editar</li>
+        </ol>
             <div class="panel panel-primary">
                 <div class="panel-heading">Formulario</div>
                 <div class="panel-body">
