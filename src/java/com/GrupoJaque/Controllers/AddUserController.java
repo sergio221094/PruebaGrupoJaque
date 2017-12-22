@@ -2,7 +2,7 @@
 package com.GrupoJaque.Controllers;
 
 import com.GrupoJaque.models.Conectar;
-import com.GrupoJaque.models.Usuario;
+import com.GrupoJaque.models.Usuarios;
 import com.GrupoJaque.models.UsuariosValidaciones;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -33,13 +33,13 @@ public class AddUserController {
     {
         ModelAndView mav=new ModelAndView();
         mav.setViewName("addUser");
-        mav.addObject("usuario",new Usuario());
+        mav.addObject("usuario",new Usuarios());
         return mav;
     }
        @RequestMapping(method=RequestMethod.POST)
     public ModelAndView form
         (
-                @ModelAttribute("usuario") Usuario u,
+                @ModelAttribute("usuario") Usuarios u,
                 BindingResult result,
                 SessionStatus status
         )
@@ -49,7 +49,7 @@ public class AddUserController {
         {
             ModelAndView mav=new ModelAndView();
             mav.setViewName("addUser");
-            mav.addObject("usuario",new Usuario());
+            mav.addObject("usuario",new Usuarios());
             return mav; 
         }else
         {

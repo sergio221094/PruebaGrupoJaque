@@ -8,15 +8,20 @@
         <title>Home</title>
     </head>
     <body>
-        <div class="row">
-            <div class="container">
-                <h1>¡Bienvenido!</h1>
-                <p>
-                    <a href="<c:url value="homeUser.htm" />" class="btn btn-success"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Jugadores</a><br><br>
-                    <a href="<c:url value="homeAdmin.htm" />" class="btn btn-success"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Administrador</a>
-                </p>
+
+                
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Bienvenido</h1>
+            <div class="account-wall">
+                <a href="<c:url value="homeUser.htm" />" class="btn btn-lg btn-primary btn-block" type="submit">
+                    Jugadores</a>
+                <a href="<c:url value="homeAdmin.htm" />" class="btn btn-lg btn-primary btn-block" type="submit">
+                    Administradores</a> 
             </div>
+           
         </div>
-        
+
+    </div>
     </body>
 </html>

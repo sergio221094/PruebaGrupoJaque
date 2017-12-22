@@ -54,4 +54,31 @@ public class Logueo {
        
        return consulta;
    }
+         public int logearAdmin(String us, String ps){
+       Connection conn;
+       PreparedStatement pst;
+       ResultSet rs;
+       int consulta=0;
+       String sql="SELECT count(*) FROM `admin` WHERE admin_username = '"+us+"' and admin_pass = '"+ps+"'";
+  
+       try {
+           Class.forName(this.driver);
+           conn = (Connection) DriverManager.getConnection(           
+           this.url,
+           this.uss,
+           this.contra);
+
+           
+           pst=(PreparedStatement) conn.prepareStatement(sql);
+           rs=pst.executeQuery();
+           
+           while(rs.next()){
+               consulta=rs.getInt(1);
+           }
+           conn.close();
+       } catch (ClassNotFoundException | SQLException e) {
+       }
+       
+       return consulta;
+   }
 }

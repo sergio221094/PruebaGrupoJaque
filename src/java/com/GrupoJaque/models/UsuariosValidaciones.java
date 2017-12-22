@@ -21,12 +21,12 @@ public class UsuariosValidaciones implements Validator{
     @Override
     public boolean supports(Class<?> type) 
     {
-        return Usuario.class.isAssignableFrom(type);
+        return Usuarios.class.isAssignableFrom(type);
     }
 
     @Override
     public void validate(Object o, Errors errors) {
-        Usuario usuario=(Usuario)o;
+        Usuarios usuario=(Usuarios)o;
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username",
         "required.username", "El campo Username es Obligatorio.");
          ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nombre",

@@ -25,14 +25,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping("user.htm")
-public class UserController 
+@RequestMapping("edit.htm")
+public class EditController 
 {
     UsuariosValidaciones usuariosValidar;
     private JdbcTemplate jdbcTemplate;
      
     
-    public UserController() 
+    public EditController() 
     {
         this.usuariosValidar=new UsuariosValidaciones();
         Conectar con=new Conectar();
@@ -44,7 +44,7 @@ public class UserController
         ModelAndView mav=new ModelAndView();
         int id=Integer.parseInt(request.getParameter("id_usuario"));
         Usuarios datos=this.selectUsuario(id);
-        mav.setViewName("user");
+        mav.setViewName("edit");
         mav.addObject("usuario",new Usuarios(id,datos.getUsername(),datos.getNombre(),datos.getCorreo(),datos.getPass(),datos.getTelefono(),datos.getArma(),datos.getEquipo(),datos.getMeza(),datos.getCuarto()));
         return mav;
     }
@@ -63,7 +63,7 @@ public class UserController
              ModelAndView mav=new ModelAndView();
             int id=Integer.parseInt(request.getParameter("id_usuario"));
             Usuarios datos=this.selectUsuario(id);
-            mav.setViewName("user");
+            mav.setViewName("edit");
             mav.addObject("usuario",new Usuarios(id,datos.getUsername(),datos.getNombre(),datos.getCorreo(),datos.getPass(),datos.getTelefono(),datos.getArma(),datos.getEquipo(),datos.getMeza(),datos.getCuarto()));
             return mav;
         }else
@@ -79,7 +79,7 @@ public class UserController
     public Usuarios selectUsuario(int id) 
     {
         final Usuarios user = new Usuarios();
-        String quer = "SELECT * FROM usuario WHERE id_usuario='" +id+"'";
+        String quer = "SELECT * FROM usuario WHERE id_usuario='" + id+"'";
         return (Usuarios) jdbcTemplate.query
         (
                 quer, new ResultSetExtractor<Usuarios>() 

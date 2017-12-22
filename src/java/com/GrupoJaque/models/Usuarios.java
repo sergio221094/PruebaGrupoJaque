@@ -9,29 +9,44 @@ package com.GrupoJaque.models;
  *
  * @author sergi
  */
-public class Usuario {
+public class Usuarios {
     
     private int id_usuario;
-    private String username,nombre,correo,pass,telefono;
+    private String username,nombre,correo,pass,telefono,arma,equipo,meza,cuarto;
 
-    public Usuario() {
+    public Usuarios() {
     }
 
-    public Usuario(String username, String nombre, String correo, String pass, String telefono) {
+    public Usuarios(String username, String nombre, String correo, String pass, String telefono, String arma, String equipo, String meza, String cuarto) {
         this.username = username;
         this.nombre = nombre;
         this.correo = correo;
         this.pass = pass;
         this.telefono = telefono;
+        this.arma = arma;
+        this.equipo = equipo;
+        this.meza = meza;
+        this.cuarto = cuarto;
     }
 
-    public Usuario(int id_usuario, String username, String nombre, String correo, String pass, String telefono) {
+    public Usuarios(int id_usuario, String username, String nombre, String correo, String pass, String telefono, String arma, String equipo, String meza, String cuarto) {
         this.id_usuario = id_usuario;
         this.username = username;
         this.nombre = nombre;
         this.correo = correo;
         this.pass = pass;
         this.telefono = telefono;
+        this.arma = arma;
+        this.equipo = equipo;
+        this.meza = meza;
+        this.cuarto = cuarto;
+    }
+
+    public Usuarios(String arma, String equipo, String meza, String cuarto) {
+        this.arma = arma;
+        this.equipo = equipo;
+        this.meza = meza;
+        this.cuarto = cuarto;
     }
 
     public int getId_usuario() {
@@ -81,6 +96,43 @@ public class Usuario {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public String getArma() {
+        return arma;
+    }
+
+    public void setArma(String arma) {
+        this.arma = arma;
+    }
+
+    public String getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
+    }
+
+    public String getMeza() {
+        return meza;
+    }
+
+    public void setMeza(String meza) {
+        this.meza = meza;
+    }
+
+    public String getCuarto() {
+        return cuarto;
+    }
+
+    public void setCuarto(String cuarto) {
+        this.cuarto = cuarto;
+    }
     
+    
+    
+
+
+  
     
 }

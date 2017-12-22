@@ -15,7 +15,7 @@
         <li><a href="<c:url value="/home.htm" />">Inicio</a></li>
         <li><a href="<c:url value="/homeAdmin.htm" />">Login administrador</a></li>
         <li><a href="<c:url value="/admin.htm" />">index</a></li>
-        <li class="active">Usuarios Registrados</li>
+        <li class="active">Usuarios Activos</li>
         </ol>
             <div class="row">
                 <h1>Usuarios Registrados</h1>
@@ -25,10 +25,10 @@
                     <tr>
                         
                         <th>Nombre de usuario</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Contraseña</th>
-                        <th>Teléfono</th>
+                        <th>Arma</th>
+                        <th>Equipo</th>
+                        <th>Meza</th>
+                        <th>Sala</th>
                         <th>Opciones</th>
                     </tr>
                  </thead>
@@ -36,10 +36,10 @@
                     <c:forEach items="${datos}" var="dato">
                         <tr>
                             <td><c:out value="${dato.username}"/></td>
-                            <td><c:out value="${dato.nombre}"/></td>
-                            <td><c:out value="${dato.correo}"/></td>
-                            <td><c:out value="${dato.pass}"/></td>
-                            <td><c:out value="${dato.telefono}"/></td>
+                            <td><c:out value="${dato.arma}"/></td>
+                            <td><c:out value="${dato.equipo}"/></td>
+                            <td><c:out value="${dato.meza}"/></td>
+                            <td><c:out value="${dato.Cuarto}"/></td>
                             <td>
                             <a href="<c:url value="edit.htm?id_usuario=${dato.id_usuario}"/>" ><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                             <a href="<c:url value="delete.htm?id_usuario=${dato.id_usuario}"/>" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
